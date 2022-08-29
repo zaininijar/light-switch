@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+body.night {
+  background-color: #000;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 40px;
+  /* font-family: "Bebas Neue", cursive; */
+  font-family: "Courgette", cursive;
+}
+
+.switcher {
+  border: 2px solid;
+  width: 100px;
+  padding: 1px;
+  height: 40px;
+  margin: 10px auto;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.switcher .circle {
+  transition: all 0.3s ease-in;
+  right: 60px;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.switcher.active {
+  border: 2px solid white;
+}
+
+.switcher .circle.active {
+  right: 1px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.circle img {
+  display: none;
+}
+
+.circle.active img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  animation: moon 0.5s forwards;
+}
+
+@keyframes moon {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(20deg);
+  }
+}
